@@ -36,7 +36,7 @@ const myListings = [
 		parking: true,
 		location: {
 			type: "Point",
-			coordinates: [40.5719418433248, -8.447870971166376],
+			coordinates: [51.541078280085614, -0.15871891189601836],
 		},
 		picture1: image3,
 	},
@@ -59,7 +59,7 @@ const myListings = [
 		parking: true,
 		location: {
 			type: "Point",
-			coordinates: [40.57324434934528, -8.44051011799396],
+			coordinates: [51.53796304347224, -0.10189113898462315],
 		},
 		picture1: image1,
 	},
@@ -82,11 +82,11 @@ const myListings = [
 		parking: false,
 		location: {
 			type: "Point",
-			coordinates: [40.57635130421845, -8.449472814256795],
+			coordinates: [51.5117212390057, -0.30023786193990754],
 		},
 		picture1: image5,
 	},
-	/**{
+	{
 		id: 4,
 		title: "Office for sale in Lambeth",
 		listing_type: "Office",
@@ -372,7 +372,7 @@ const myListings = [
 			coordinates: [51.58701995760913, 0.05893467157444739],
 		},
 		picture1: image6,
-	},*/
-]; 
+	},
+];
 
 export default myListings;

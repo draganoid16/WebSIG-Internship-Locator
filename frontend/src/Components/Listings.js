@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup, Polyline, Polygon } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+  Marker,
+  Popup,
+  Polyline,
+  Polygon,
+} from "react-leaflet";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { Icon } from "leaflet";
@@ -15,6 +23,10 @@ import myListings from "./Assets/Data/Dummydata";
 import img1 from "./Assets/image1.jpg";
 
 function Listings() {
+  fetch("http://localhost:8000/api/listings/")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
   const houseIconVar = new Icon({
     iconUrl: houseIcon,
     iconSize: [40, 40],
@@ -33,7 +45,6 @@ function Listings() {
     [51.51, -0.1],
     [51.51, -0.12],
   ];
-
 
   return (
     <Grid container>
@@ -154,8 +165,14 @@ function Listings() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Polyline positions={polyOne} weight={10} color="green"/>
-              <Polygon positions={polygonOne} color="yellow" fillColor="blue" fillOpacity={0.9} opacity={0}/>
+              <Polyline positions={polyOne} weight={10} color="green" />
+              <Polygon
+                positions={polygonOne}
+                color="yellow"
+                fillColor="blue"
+                fillOpacity={0.9}
+                opacity={0}
+              />
               {myListings.map((listing) => {
                 function IconDisplay() {
                   if (listing.listing_type === "House") {

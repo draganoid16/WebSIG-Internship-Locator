@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Fruit(props) {
-  return (
-    <h1>This is a {props.color} {props.name}</h1>
-  )
+	return (
+		<h1>
+			This is a {props.color} {props.name}
+		</h1>
+	);
 }
 
-export default Fruit
+export default Fruit;
