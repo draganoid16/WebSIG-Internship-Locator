@@ -1,18 +1,33 @@
 .leaflet-container {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-Button.submit-button{
-	background-Color: green;
-	color: white;
-	font-Size: 1.1rem;
-	margin-left: 1rem;
-	width: 100%;
+Button.submit-button {
+  background-color: green;
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  width: 100%;
 }
 
-Button.submit-button:hover{
-background-color: blue;
+Button.submit-button:hover {
+  background-color: blue;
 }
 
+.submeter-propriadade {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  border: 5px solid black;
+  padding: 3rem;
+}
 
+.upload_pictures {
+  background-color: blue;
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  margin-left: 1rem;
+}

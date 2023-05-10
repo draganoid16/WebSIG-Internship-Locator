@@ -70,7 +70,7 @@ function Header() {
 			<Toolbar>
 				<div style={{ marginRight: "auto" }}>
 					<Button color="inherit" onClick={() => navigate("/")}>
-						<Typography variant="h4">LBREP</Typography>{" "}
+						<Typography variant="h4">UAEstagios</Typography>{" "}
 					</Button>
 				</div>
 				<div>
@@ -79,7 +79,7 @@ function Header() {
 						onClick={() => navigate("/listings")}
 						style={{ marginRight: "2rem" }}
 					>
-						<Typography variant="h6">Listings</Typography>{" "}
+						<Typography variant="h6">Estagios</Typography>{" "}
 					</Button>
 					<Button
 						color="inherit"
@@ -87,12 +87,12 @@ function Header() {
 						onClick={() => navigate("/agencies")}
 					>
 						{" "}
-						<Typography variant="h6">Agencies</Typography>{" "}
+						<Typography variant="h6">Empresas</Typography>{" "}
 					</Button>
 				</div>
 				<div style={{ marginLeft: "auto", marginRight: "10rem" }}>
 					<Button
-						onClick={() => navigate("/addproperty")}
+						onClick={() => navigate("/adicionarestagio")}
 						style={{
 							backgroundColor: "green",
 							color: "white",
@@ -104,7 +104,7 @@ function Header() {
 							// },
 						}}
 					>
-						Add Property
+						Adicionar Estagio
 					</Button>
 
 					{GlobalState.userIsLogged ? (
@@ -162,7 +162,7 @@ function Header() {
 							}}
 							onClick={HandleProfile}
 						>
-							Profile
+							Perfil
 						</MenuItem>
 						<MenuItem
 							style={{

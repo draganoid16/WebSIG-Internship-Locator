@@ -11,7 +11,7 @@ import Login from "./Components/Login";
 import Listings from "./Components/Listings";
 import Header from "./Components/Header";
 import Register from "./Components/Register";
-import AddProperty from "./Components/AddProperty";
+import AdicionarEstagio from "./Components/AdicionarEstagio";
 import Profile from "./Components/Profile";
 import Agencies from "./Components/Agencies";
 import AgencyDetail from "./Components/AgencyDetail";
@@ -78,7 +78,7 @@ function App() {
 						<Route path="/login" element={<Login />} />
 						<Route path="/created" element={<AccountCreated />} />
 						<Route path="/register" element={<Register />} />
-						<Route path="/addproperty" element={<AddProperty />} />
+						<Route path="/adicionarestagio" element={<AdicionarEstagio />} />
 						<Route path="/profile" element={<Profile />} />
 						<Route path="/agencies" element={<Agencies />} />
 						<Route path="/agencies/:id" element={<AgencyDetail />} />

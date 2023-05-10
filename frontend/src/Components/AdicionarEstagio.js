@@ -308,8 +308,8 @@ function AddProperty() {
 		picture5Value: "",
 		mapInstance: null,
 		markerPosition: {
-			lat: "51.505",
-			lng: "-0.09",
+			lat: "40.57420782215323",
+			lng: "-8.444633135493694",
 		},
 		uploadedPictures: [],
 		sendRequest: 0,
@@ -1067,7 +1067,7 @@ function AddProperty() {
 					variant="contained"
 					className="submit-button"
 				>
-					SUBMIT
+					SUBMETER
 				</Button>
 			);
 		
@@ -1080,13 +1080,13 @@ function AddProperty() {
 		) {
 			return (
 				<>
-				{console.log("teste")};
+				{console.log("teste")}
 				<Button
 					variant="outlined"
 					className="submit-button"
 					onClick={() => navigate("/profile")}
 				>
-					COMPLETE YOUR PROFILE TO ADD A PROPERTY
+					COMPLETE O SEU PERFIL PARA ADICIONAR UMA ESTAGIO
 					
 				</Button>
 				</>
@@ -1098,8 +1098,7 @@ function AddProperty() {
 					className="submit-button"
 					onClick={() => navigate("/login")}
 				>
-					SIGN IN TO ADD A PROPERTY
-				</Button>
+			INICIE SESSÃO PARA ADICIONAR UM ESTAGIO				</Button>
 			);
 		}
 	}
@@ -1114,24 +1113,17 @@ function AddProperty() {
 
 	return (
 		<div
-			style={{
-				width: "75%",
-				marginLeft: "auto",
-				marginRight: "auto",
-				marginTop: "3rem",
-				border: "5px solid black",
-				padding: "3rem",
-			}}
+			className="submeter-propriadade"
 		>
 			<form onSubmit={FormSubmit}>
 				<Grid item container justifyContent="center">
-					<Typography variant="h4">SUBMIT A PROPERTY</Typography>
+					<Typography variant="h4">SUBMETER UM ESTAGIO</Typography>
 				</Grid>
 
 				<Grid item container style={{ marginTop: "1rem" }}>
 					<TextField
 						id="title"
-						label="Title*"
+						label="Titulo"
 						variant="standard"
 						fullWidth
 						value={state.titleValue}
@@ -1156,7 +1148,7 @@ function AddProperty() {
 					<Grid item xs={5} style={{ marginTop: "1rem" }}>
 						<TextField
 							id="listingType"
-							label="Listing Type*"
+							label="Tipo de Estagio"
 							variant="standard"
 							fullWidth
 							value={state.listingTypeValue}
@@ -1190,7 +1182,7 @@ function AddProperty() {
 					<Grid item xs={5} style={{ marginTop: "1rem" }}>
 						<TextField
 							id="propertyStatus"
-							label="Property Status*"
+							label="Estagio"
 							variant="standard"
 							fullWidth
 							value={state.propertyStatusValue}
@@ -1222,59 +1214,7 @@ function AddProperty() {
 					</Grid>
 				</Grid>
 
-				<Grid item container justifyContent="space-between">
-					<Grid item xs={5} style={{ marginTop: "1rem" }}>
-						<TextField
-							id="rentalFrequency"
-							label="Rental Frequency"
-							variant="standard"
-							disabled={state.propertyStatusValue === "Sale" ? true : false}
-							fullWidth
-							value={state.rentalFrequencyValue}
-							onChange={(e) =>
-								dispatch({
-									type: "catchRentalFrequencyChange",
-									rentalFrequencyChosen: e.target.value,
-								})
-							}
-							select
-							SelectProps={{
-								native: true,
-							}}
-						>
-							{rentalFrequencyOptions.map((option) => (
-								<option key={option.value} value={option.value}>
-									{option.label}
-								</option>
-							))}
-						</TextField>
-					</Grid>
-
-					<Grid item xs={5} style={{ marginTop: "1rem" }}>
-						<TextField
-							id="price"
-							type="number"
-							label={PriceDisplay()}
-							variant="standard"
-							fullWidth
-							value={state.priceValue}
-							onChange={(e) =>
-								dispatch({
-									type: "catchPriceChange",
-									priceChosen: e.target.value,
-								})
-							}
-							onBlur={(e) =>
-								dispatch({
-									type: "catchPriceErrors",
-									priceChosen: e.target.value,
-								})
-							}
-							error={state.priceErrors.hasErrors ? true : false}
-							helperText={state.priceErrors.errorMessage}
-						/>
-					</Grid>
-				</Grid>
+		
 
 				<Grid item container style={{ marginTop: "1rem" }}>
 					<TextField
@@ -1329,7 +1269,7 @@ function AddProperty() {
 									}
 								/>
 							}
-							label="Furnished"
+							label="Flexibilidade Laboral"
 						/>
 					</Grid>
 
@@ -1346,7 +1286,7 @@ function AddProperty() {
 									}
 								/>
 							}
-							label="Pool"
+							label="Trabalho Remoto"
 						/>
 					</Grid>
 
@@ -1363,7 +1303,7 @@ function AddProperty() {
 									}
 								/>
 							}
-							label="Elevator"
+							label="Renumerado"
 						/>
 					</Grid>
 
@@ -1380,7 +1320,7 @@ function AddProperty() {
 									}
 								/>
 							}
-							label="Cctv"
+							label="Acesso a Cursos"
 						/>
 					</Grid>
 
@@ -1397,7 +1337,7 @@ function AddProperty() {
 									}
 								/>
 							}
-							label="Parking"
+							label="Estacionamento"
 						/>
 					</Grid>
 				</Grid>
@@ -1406,7 +1346,7 @@ function AddProperty() {
 					<Grid item xs={5} style={{ marginTop: "1rem" }}>
 						<TextField
 							id="area"
-							label="Area*"
+							label="Distrito"
 							variant="standard"
 							fullWidth
 							value={state.areaValue}
@@ -1440,7 +1380,7 @@ function AddProperty() {
 					<Grid item xs={5} style={{ marginTop: "1rem" }}>
 						<TextField
 							id="borough"
-							label="Borough*"
+							label="Concelho*"
 							variant="standard"
 							fullWidth
 							value={state.boroughValue}
@@ -1486,18 +1426,18 @@ function AddProperty() {
 				<Grid item style={{ marginTop: "1rem" }}>
 					{state.latitudeValue && state.longitudeValue ? (
 						<Alert severity="success">
-							You property is located @ {state.latitudeValue},{" "}
+							O seu Estagio está localizado em: {state.latitudeValue},{" "}
 							{state.longitudeValue}
 						</Alert>
 					) : (
 						<Alert severity="warning">
-							Locate your property on the map before submitting this form
+							Localize o seu estagio no mapa antes de submeter este formulário.
 						</Alert>
 					)}
 				</Grid>
 				<Grid item container style={{ height: "35rem", marginTop: "1rem" }}>
 					<MapContainer
-						center={[51.505, -0.09]}
+						center={[40.57439623328142, -8.44390723321433]}
 						zoom={14}
 						scrollWheelZoom={true}
 					>
@@ -1527,15 +1467,9 @@ function AddProperty() {
 						variant="contained"
 						component="label"
 						fullWidth
-						style={{
-							backgroundColor: "blue",
-							color: "white",
-							fontSize: "0.8rem",
-							border: "1px solid black",
-							marginLeft: "1rem",
-						}}
+						className="upload-pictures"
 					>
-						UPLOAD PICTURES (MAX 5)
+						UPLOAD FICHEIROS (MAX 5)
 						<input
 							type="file"
 							multiple
@@ -1573,7 +1507,7 @@ function AddProperty() {
 
 			<Snackbar
 				open={state.openSnack}
-				message="You have successfully added your property!"
+				message="Estagio Adicionado Com Sucesso!"
 				anchorOrigin={{
 					vertical: "bottom",
 					horizontal: "center",
