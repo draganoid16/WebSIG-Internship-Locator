@@ -377,18 +377,18 @@ function Register() {
 				style={{ marginTop: "1rem" }}
 			>
 				<Typography variant="small">
-					Already have an account?{" "}
+					Já tens conta?{" "}
 					<span
 						onClick={() => navigate("/login")}
 						style={{ cursor: "pointer", color: "green" }}
 					>
-						SIGN IN
+						LOGIN
 					</span>
 				</Typography>
 			</Grid>
 			<Snackbar
 				open={state.openSnack}
-				message="You have successfully created an account!"
+				message="Conta Criada Com Sucesso!"
 				anchorOrigin={{
 					vertical: "bottom",
 					horizontal: "center",
