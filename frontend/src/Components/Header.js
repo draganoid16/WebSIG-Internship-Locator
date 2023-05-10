@@ -35,14 +35,14 @@ function Header() {
 
 	function HandleProfile() {
 		setAnchorEl(null);
-		navigate("/profile");
+		navigate("/perfil");
 	}
 
 	const [openSnack, setOpenSnack] = useState(false);
 
 	async function HandleLogout() {
 		setAnchorEl(null);
-		const confirmLogout = window.confirm("Are you sure you want to leave?");
+		const confirmLogout = window.confirm("Tens a certeza que queres dar logout?");
 		if (confirmLogout) {
 			try {
 				const response = await Axios.post(
@@ -84,7 +84,7 @@ function Header() {
 					<Button
 						color="inherit"
 						style={{ marginLeft: "2rem" }}
-						onClick={() => navigate("/agencies")}
+						onClick={() => navigate("/empresas")}
 					>
 						{" "}
 						<Typography variant="h6">Empresas</Typography>{" "}
@@ -93,49 +93,21 @@ function Header() {
 				<div style={{ marginLeft: "auto", marginRight: "10rem" }}>
 					<Button
 						onClick={() => navigate("/adicionarestagio")}
-						style={{
-							backgroundColor: "green",
-							color: "white",
-							width: "15rem",
-							fontSize: "1.1rem",
-							// marginRight: "1rem",
-							// "&:hover": {
-							// 	backgroundColor: "blue",
-							// },
-						}}
+						className="adicionar-estagio"
 					>
 						Adicionar Estagio
 					</Button>
 
 					{GlobalState.userIsLogged ? (
 						<Button
-							style={{
-								backgroundColor: "white",
-								color: "black",
-								width: "15rem",
-								fontSize: "1.1rem",
-								marginLeft: "1rem",
-								// "&:hover": {
-								// 	backgroundColor: "green",
-								// },
-							}}
+							className="perfil"
 							onClick={handleClick}
-							// onClick={() => navigate("/login")}
 						>
 							{GlobalState.userUsername}
 						</Button>
 					) : (
 						<Button
-							style={{
-								backgroundColor: "white",
-								color: "black",
-								width: "15rem",
-								fontSize: "1.1rem",
-								marginLeft: "1rem",
-								// "&:hover": {
-								// 	backgroundColor: "green",
-								// },
-							}}
+							className="perfil"
 							onClick={() => navigate("/login")}
 						>
 							Login
@@ -152,26 +124,13 @@ function Header() {
 						}}
 					>
 						<MenuItem
-							style={{
-								color: "black",
-								backgroundColor: "green",
-								width: "15rem",
-								fontWeight: "bolder",
-								borderRadius: "15px",
-								marginBottom: "0.25rem",
-							}}
+							className="perfil"
 							onClick={HandleProfile}
 						>
 							Perfil
 						</MenuItem>
 						<MenuItem
-							style={{
-								color: "black",
-								backgroundColor: "red",
-								width: "15rem",
-								fontWeight: "bolder",
-								borderRadius: "15px",
-							}}
+							className="perfil"
 							onClick={HandleLogout}
 						>
 							Logout
@@ -179,7 +138,7 @@ function Header() {
 					</Menu>
 					<Snackbar
 						open={openSnack}
-						message="You have successfully logged out!"
+						message="Logout com sucesso!"
 						anchorOrigin={{
 							vertical: "bottom",
 							horizontal: "center",

@@ -229,18 +229,11 @@ function Register() {
 
 	return (
 		<div
-			style={{
-				width: "50%",
-				marginLeft: "auto",
-				marginRight: "auto",
-				marginTop: "3rem",
-				border: "5px solid black",
-				padding: "3rem",
-			}}
+			className="form-container"
 		>
 			<form onSubmit={FormSubmit}>
 				<Grid item container justifyContent="center">
-					<Typography variant="h4">CREATE AN ACCOUNT</Typography>
+					<Typography variant="h4">CRIA UMA CONTA</Typography>
 				</Grid>
 
 				{state.serverMessageUsername ? (
@@ -370,18 +363,10 @@ function Register() {
 						variant="contained"
 						fullWidth
 						type="submit"
-						style={{
-							backgroundColor: "green",
-							color: "white",
-							fontSize: "1.1rem",
-							marginLeft: "1rem",
-							// "&:hover": {
-							// 	backgroundColor: "blue",
-							// },
-						}}
+						className="submit-button"
 						disabled={state.disabledBtn}
 					>
-						SIGN UP
+						REGISTRAR
 					</Button>
 				</Grid>
 			</form>

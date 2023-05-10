@@ -85,29 +85,29 @@ function Profile() {
 		if (state.userProfile.sellerListings.length === 0) {
 			return (
 				<Button
-					onClick={() => navigate(`/agencies/${state.userProfile.sellerId}`)}
-					disabled
+					onClick={() => navigate(`/empresas/${state.userProfile.sellerId}`)}
+					
 					size="small"
 				>
-					No Property
+					Zero Estagios
 				</Button>
 			);
 		} else if (state.userProfile.sellerListings.length === 1) {
 			return (
 				<Button
-					onClick={() => navigate(`/agencies/${state.userProfile.sellerId}`)}
+					onClick={() => navigate(`/empresas/${state.userProfile.sellerId}`)}
 					size="small"
 				>
-					One Property listed
+					Um Estagio
 				</Button>
 			);
 		} else {
 			return (
 				<Button
-					onClick={() => navigate(`/agencies/${state.userProfile.sellerId}`)}
+					onClick={() => navigate(`/empresas/${state.userProfile.sellerId}`)}
 					size="small"
 				>
-					{state.userProfile.sellerListings.length} Properties
+					{state.userProfile.sellerListings.length} Estagios
 				</Button>
 			);
 		}
@@ -123,31 +123,25 @@ function Profile() {
 			return (
 				<Typography
 					variant="h5"
-					style={{ textAlign: "center", marginTop: "1rem" }}
+					className="welcome-text"
 				>
-					Welcome{" "}
-					<span style={{ color: "green", fontWeight: "bolder" }}>
+					Bem Vindo{" "}
+					<span className="highlight">
 						{GlobalState.userUsername}
 					</span>{" "}
-					, please submit this form below to update your profile.
+					, por favor submete o form para atualizar o perfil.
 				</Typography>
 			);
 		} else {
 			return (
 				<Grid
 					container
-					style={{
-						width: "50%",
-						marginLeft: "auto",
-						marginRight: "auto",
-						border: "5px solid black",
-						marginTop: "1rem",
-						padding: "5px",
-					}}
+					className="profile-container"
+					sx={{ width: '50%'}}
 				>
-					<Grid item xs={6}>
+					<Grid item xs={4}>
 						<img
-							style={{ height: "10rem", width: "15rem" }}
+							className="image"
 							src={
 								state.userProfile.profilePic !== null
 									? state.userProfile.profilePic
@@ -165,10 +159,10 @@ function Profile() {
 						<Grid item>
 							<Typography
 								variant="h5"
-								style={{ textAlign: "center", marginTop: "1rem" }}
+								className="welcome-text"
 							>
-								Welcome{" "}
-								<span style={{ color: "green", fontWeight: "bolder" }}>
+								Bem Vindo{" "}
+								<span className="highlight">
 									{GlobalState.userUsername}
 								</span>
 							</Typography>
@@ -176,9 +170,9 @@ function Profile() {
 						<Grid item>
 							<Typography
 								variant="h5"
-								style={{ textAlign: "center", marginTop: "1rem" }}
+								className="welcome-text"
 							>
-								You have {PropertiesDisplay()}
+								Tens {PropertiesDisplay()}
 							</Typography>
 						</Grid>
 					</Grid>

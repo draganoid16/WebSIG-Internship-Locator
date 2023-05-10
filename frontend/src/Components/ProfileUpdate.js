@@ -185,13 +185,13 @@ function ProfileUpdate(props) {
 			>
 				<form onSubmit={FormSubmit}>
 					<Grid item container justifyContent="center">
-						<Typography variant="h4">MY PROFILE</Typography>
+						<Typography variant="h4">O MEU PERFIL</Typography>
 					</Grid>
 
 					<Grid item container style={{ marginTop: "1rem" }}>
 						<TextField
 							id="agencyName"
-							label="Agency Name*"
+							label="Nome da Empresa*"
 							variant="outlined"
 							fullWidth
 							value={state.agencyNameValue}
@@ -207,7 +207,7 @@ function ProfileUpdate(props) {
 					<Grid item container style={{ marginTop: "1rem" }}>
 						<TextField
 							id="phoneNumber"
-							label="Phone Number*"
+							label="Numero de Telefone*"
 							variant="outlined"
 							fullWidth
 							value={state.phoneNumberValue}
@@ -223,7 +223,7 @@ function ProfileUpdate(props) {
 					<Grid item container style={{ marginTop: "1rem" }}>
 						<TextField
 							id="bio"
-							label="Bio"
+							label="Descrição"
 							variant="outlined"
 							multiline
 							rows={6}
@@ -264,7 +264,7 @@ function ProfileUpdate(props) {
 								marginLeft: "1rem",
 							}}
 						>
-							PROFILE PICTURE
+							FOTO DE PERFIL
 							<input
 								type="file"
 								accept="image/png, image/gif, image/jpeg"
@@ -310,7 +310,7 @@ function ProfileUpdate(props) {
 				</form>
 				<Snackbar
 					open={state.openSnack}
-					message="You have successfully updated your profile!"
+					message="Perfil atualizado com sucesso!"
 					anchorOrigin={{
 						vertical: "bottom",
 						horizontal: "center",
