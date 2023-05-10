@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { useImmerReducer } from "use-immer";
 
-// React Leaflet
 import {
 	MapContainer,
 	TileLayer,
@@ -13,10 +12,8 @@ import {
 	Polygon,
 } from "react-leaflet";
 
-// Contexts
 import StateContext from "../Contexts/StateContext";
 
-// Boroughs
 import Camden from "./Assets/Boroughs/Camden";
 import Greenwich from "./Assets/Boroughs/Greenwich";
 import Hackney from "./Assets/Boroughs/Hackney";
@@ -566,8 +563,7 @@ function AddProperty() {
 		return null;
 	}
 
-	// Use effect to change the map view depending on chosen borough
-	// Changing the map view depending on the choen borough
+
 
 	useEffect(() => {
 		if (state.boroughValue === "Camden") {
@@ -804,7 +800,6 @@ function AddProperty() {
 		}
 	}, [state.boroughValue]);
 
-	// Borough display function
 
 	function BoroughDisplay() {
 		if (state.boroughValue === "Camden") {
@@ -876,7 +871,6 @@ function AddProperty() {
 		}
 	}
 
-	// Draggable marker
 
 	const markerRef = useRef(null);
 	const eventHandlers = useMemo(
@@ -896,7 +890,6 @@ function AddProperty() {
 		[]
 	);
 
-	// Catching picture fields
 	useEffect(() => {
 		if (state.uploadedPictures[0]) {
 			dispatch({
@@ -942,12 +935,11 @@ function AddProperty() {
 		}
 	}, [state.uploadedPictures[4]]);
 
-	// request to get profile info
 	useEffect(() => {
 		async function GetProfileInfo() {
 			try {
 				const response = await Axios.get(
-					`https://www.lbrepcourseapi.com/api/profiles/${GlobalState.userId}/`
+					`http://www.localhost:8000.com/api/profiles/${GlobalState.userId}/`
 				);
 
 				dispatch({
@@ -1024,7 +1016,7 @@ function AddProperty() {
 
 				try {
 					const response = await Axios.post(
-						"https://www.lbrepcourseapi.com/api/listings/create/",
+						"http://localhost:8000/api/listings/create/",
 						formData
 					);
 
@@ -1059,6 +1051,10 @@ function AddProperty() {
 	}
 
 	function SubmitButtonDisplay() {
+		{console.log(GlobalState.userIsLogged)};
+		{console.log(state.userProfile.agencyName)};
+		{console.log(state.userProfile.phoneNumber)};
+
 		if (
 			GlobalState.userIsLogged &&
 			state.userProfile.agencyName !== null &&
@@ -1069,22 +1065,12 @@ function AddProperty() {
 			return (
 				<Button
 					variant="contained"
-					fullWidth
-					type="submit"
-					style={{
-						backgroundColor: "green",
-						color: "white",
-						fontSize: "1.1rem",
-						marginLeft: "1rem",
-						"&:hover": {
-							backgroundColor: "blue",
-						},
-					}}
-					disabled={state.disabledBtn}
+					className="submit-button"
 				>
 					SUBMIT
 				</Button>
 			);
+		
 		} else if (
 			GlobalState.userIsLogged &&
 			(state.userProfile.agencyName === null ||
@@ -1093,38 +1079,24 @@ function AddProperty() {
 				state.userProfile.phoneNumber === "")
 		) {
 			return (
+				<>
+				{console.log("teste")};
 				<Button
 					variant="outlined"
-					fullWidth
-					style={{
-						backgroundColor: "green",
-						color: "white",
-						fontSize: "1.1rem",
-						marginLeft: "1rem",
-						"&:hover": {
-							backgroundColor: "blue",
-						},
-					}}
+					className="submit-button"
 					onClick={() => navigate("/profile")}
 				>
 					COMPLETE YOUR PROFILE TO ADD A PROPERTY
+					
 				</Button>
+				</>
 			);
 		} else if (!GlobalState.userIsLogged) {
 			return (
 				<Button
 					variant="outlined"
-					fullWidth
+					className="submit-button"
 					onClick={() => navigate("/login")}
-					style={{
-						backgroundColor: "green",
-						color: "white",
-						fontSize: "1.1rem",
-						marginLeft: "1rem",
-						"&:hover": {
-							backgroundColor: "blue",
-						},
-					}}
 				>
 					SIGN IN TO ADD A PROPERTY
 				</Button>

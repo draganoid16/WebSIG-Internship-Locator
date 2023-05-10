@@ -32,7 +32,7 @@ function Activation() {
 	async function ActivationHandler() {
 		try {
 			const response = await Axios.post(
-				"https://www.lbrepcourseapi.com/api-auth-djoser/users/activation/",
+				"http://www.localhost:8000/api-auth-djoser/users/activation/",
 				{
 					uid: params.uid,
 					token: params.token,

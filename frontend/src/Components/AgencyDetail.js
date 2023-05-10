@@ -68,7 +68,7 @@ function AgencyDetail() {
 		async function GetProfileInfo() {
 			try {
 				const response = await Axios.get(
-					`https://www.lbrepcourseapi.com/api/profiles/${params.id}/`
+					`http://localhost:8000/api/profiles/${params.id}/`
 				);
 
 				dispatch({
@@ -161,11 +161,6 @@ function AgencyDetail() {
 								<CardMedia
 									component="img"
 									height="140"
-									// image={
-									// 	`https://www.lbrepcourseapi.com${listing.picture1}`
-									// 		? `https://www.lbrepcourseapi.com${listing.picture1}`
-									// 		: defaultProfilePicture
-									// }
 									image={
 										listing.picture1 ? listing.picture1 : defaultProfilePicture
 									}

@@ -2,3 +2,17 @@
 	height: 100%;
 	width: 100%;
 }
+
+Button.submit-button{
+	background-Color: green;
+	color: white;
+	font-Size: 1.1rem;
+	margin-left: 1rem;
+	width: 100%;
+}
+
+Button.submit-button:hover{
+background-color: blue;
+}
+
+

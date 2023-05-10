@@ -174,7 +174,7 @@ function Register() {
 			async function SignUp() {
 				try {
 					const response = await Axios.post(
-						"https://www.lbrepcourseapi.com/api-auth-djoser/users/",
+						"http://localhost:8000/api-auth-djoser/users/",
 						{
 							username: state.usernameValue,
 							email: state.emailValue,
@@ -221,7 +221,8 @@ function Register() {
 	useEffect(() => {
 		if (state.openSnack) {
 			setTimeout(() => {
-				navigate("/created");
+				//created
+				navigate("/listings");
 			}, 1500);
 		}
 	}, [state.openSnack]);

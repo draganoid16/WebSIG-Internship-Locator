@@ -34,7 +34,7 @@ function Home() {
 						FIND YOUR <span style={{ color: "green" }}>NEXT PROPERTY</span> ON
 						THE LBREP WEBSITE
 					</Typography>
-					<Button
+					<Button href="/listings"
 						variant="contained"
 						style={{
 							fontSize: "3.5rem",
@@ -43,6 +43,7 @@ function Home() {
 							marginTop: "2rem",
 							boxShadow: "3px 3px 3px white",
 						}}
+						
 					>
 						SEE ALL PROPERTIES
 					</Button>
