@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Button, Typography, Grid, AppBar, Toolbar } from "@mui/material";
 
 // Components
-import CustomCard from "./CustomCard";
 import Header from "./Header";
 
 // Assets

@@ -10,7 +10,6 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Listings from "./Components/Listings";
 import Header from "./Components/Header";
-import Testing from "./Components/Testing";
 import Register from "./Components/Register";
 import AddProperty from "./Components/AddProperty";
 import Profile from "./Components/Profile";
@@ -85,7 +84,6 @@ function App() {
 						<Route path="/agencies/:id" element={<AgencyDetail />} />
 						<Route path="/listings/:id" element={<ListingDetail />} />
 						<Route path="/listings" element={<Listings />} />
-						<Route path="/testing" element={<Testing />} />
 					</Routes>
 				</BrowserRouter>
 				{/* </StyledEngineProvider> */}

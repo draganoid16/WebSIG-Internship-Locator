@@ -18,8 +18,6 @@ import {
 import StateContext from "../Contexts/StateContext";
 import DispatchContext from "../Contexts/DispatchContext";
 
-// Components
-import CustomCard from "./CustomCard";
 
 function Header() {
 	const navigate = useNavigate();

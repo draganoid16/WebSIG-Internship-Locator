@@ -37,7 +37,6 @@ import officeIconPng from "./Assets/Mapicons/office.png";
 // Assets
 import img1 from "./Assets/img1.jpg";
 import myListings from "./Assets/Data/Dummydata";
-import polygonOne from "./Shape";
 
 function Listings() {
 	const navigate = useNavigate();
