@@ -80,7 +80,7 @@ function Profile() {
 		}
 		GetProfileInfo();
 	}, []);
-
+/*
 	function PropertiesDisplay() {
 		if (state.userProfile.sellerListings.length === 0) {
 			return (
@@ -112,7 +112,7 @@ function Profile() {
 			);
 		}
 	}
-
+*/
 	function WelcomeDisplay() {
 		if (
 			state.userProfile.agencyName === null ||
@@ -148,16 +148,7 @@ function Profile() {
 									: defaultProfilePicture
 							}
 						/>
-					</Grid>
-					<Grid
-						item
-						container
-						direction="column"
-						justifyContent="center"
-						xs={6}
-					>
-						<Grid item>
-							<Typography
+						<Typography
 								variant="h5"
 								className="welcome-text"
 							>
@@ -166,16 +157,8 @@ function Profile() {
 									{GlobalState.userUsername}
 								</span>
 							</Typography>
-						</Grid>
-						<Grid item>
-							<Typography
-								variant="h5"
-								className="welcome-text"
-							>
-								Tens {PropertiesDisplay()}
-							</Typography>
-						</Grid>
 					</Grid>
+					
 				</Grid>
 			);
 		}

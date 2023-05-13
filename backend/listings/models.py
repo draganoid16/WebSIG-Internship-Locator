@@ -1,8 +1,10 @@
 from random import choices
-from django.contrib.gis.db import models
-from django.utils import timezone
-from django.contrib.gis.geos import Point
+
 from django.contrib.auth import get_user_model
+from django.contrib.gis.db import models
+from django.contrib.gis.geos import Point
+from django.utils import timezone
+
 User = get_user_model()
 
 class Listing(models.Model):
@@ -52,3 +54,16 @@ class Listing(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Poi(models.Model):
+    name = models.CharField(max_length=120, blank=True, null=True)
+    choices_type = (
+        ('University', 'University'),
+        ('Hospital', 'Hospital'),
+        ('Stadium', 'Stadium'),
+    )
+    type = models.CharField(max_length=50, choices =choices_type)
+    location = models.PointField(srid=4326, blank=True, null=True)
+
+    def __str__(self):
+        return self.name

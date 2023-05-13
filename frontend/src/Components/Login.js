@@ -163,15 +163,8 @@ function Login() {
 	}, [state.openSnack]);
 
 	return (
-		<div
-			style={{
-				width: "50%",
-				marginLeft: "auto",
-				marginRight: "auto",
-				marginTop: "3rem",
-				border: "5px solid black",
-				padding: "3rem",
-			}}
+		<div className="container-login"
+			
 		>
 			<form onSubmit={FormSubmit}>
 				<Grid item container justifyContent="center">
@@ -179,7 +172,7 @@ function Login() {
 				</Grid>
 
 				{state.serverError ? (
-					<Alert severity="error">Incorrect username or password!</Alert>
+					<Alert severity="error">Password ou Username incorretos!</Alert>
 				) : (
 					""
 				)}
@@ -225,19 +218,11 @@ function Login() {
 					xs={8}
 					style={{ marginTop: "1rem", marginLeft: "auto", marginRight: "auto" }}
 				>
-					<Button
+					<Button 
+						id="botao-submit-login"
 						variant="contained"
 						fullWidth
 						type="submit"
-						style={{
-							backgroundColor: "green",
-							color: "white",
-							fontSize: "1.1rem",
-							marginLeft: "1rem",
-							// "&:hover": {
-							// 	backgroundColor: "blue",
-							// },
-						}}
 						disabled={state.disabledBtn}
 					>
 						SIGN IN

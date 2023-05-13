@@ -104,23 +104,21 @@ function Header() {
         <div style={{ marginLeft: "auto", marginRight: "10rem" }}>
           <Button
             className="botoes-navbar-hover adicionar-estagio"
-            onClick={() => navigate("/addproperty")}
+            onClick={() => navigate("/adicionarestagio")}
             color="inherit"
           >
             Adicionar Estagio
           </Button>
 
           {GlobalState.userIsLogged ? (
-            <Button className="perfil" onClick={handleClick}>
+            <Button className="texto-contraste botao-user-hover" onClick={handleClick}>
               {GlobalState.userUsername}
             </Button>
           ) : (
-            <Button
+            <Button 
+            id="botao-login-navbar"
               variant="contained"
-              style={{
-                backgroundColor: "rgb(146, 212, 0)",
-                marginLeft: "1rem",
-              }}
+            
               className="perfil"
               onClick={() => navigate("/login")}
             >

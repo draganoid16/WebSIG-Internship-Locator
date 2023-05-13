@@ -3,16 +3,24 @@
   width: 100%;
 }
 
+:root {
+  --cor-contraste: rgb(115, 168, 0);
+  --cor-contraste-hover: rgb(93, 136, 0);
+  --cor-neutra: #ffff;
+}
+
 Button.submit-button {
-  background-color: green;
-  color: white;
+  background-color: var(--cor-contraste);
+  color: var(--cor-neutra);
   font-size: 1.1rem;
   margin-left: 1rem;
   width: 100%;
+  border: none !important;
 }
 
 Button.submit-button:hover {
-  background-color: blue;
+  border: none !important;
+  background-color: var(--cor-contraste-hover);
 }
 
 .submeter-propriadade {
@@ -26,7 +34,7 @@ Button.submit-button:hover {
 
 .upload_pictures {
   background-color: blue;
-  color: white;
+  color: var(--cor-neutra);
   font-size: 0.8rem;
   border: 1px solid black;
   margin-left: 1rem;
@@ -43,7 +51,7 @@ Button.submit-button:hover {
 }
 
 .highlight {
-  color: green;
+  color: var(--cor-contraste);
   font-weight: bolder;
 }
 
@@ -77,13 +85,23 @@ Button.submit-button:hover {
 /*Fim de Register.js*/
 
 .bg-verde {
-  background-color: rgb(146, 212, 0);
+  background-color: var(--cor-contraste);
+}
+.texto-contraste{
+  color: var(--cor-contraste) !important;
 }
 
 .botoes-navbar-hover:hover {
   color: var(--cor-contraste);
 }
 
+#botao-login-navbar{
+  background-color:  var(--cor-contraste);
+  margin-left: 1rem;
+}
+.botao-user-hover:hover{
+  color: var(--cor-neutra)!important;
+}
 .container-home {
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,7 +127,7 @@ Button.submit-button:hover {
   flex-direction: column;
 }
 #titulo-home {
-  color: #fff;
+  color: var(--cor-neutra);
   font-size: 2.3rem;
   font-weight: 500;
 }
@@ -117,6 +135,31 @@ Button.submit-button:hover {
   width: fit-content;
   font-size: 1.2rem;
   border-radius: 5px;
-  background-color: rgb(146, 212, 0);
+  background-color: var(--cor-contraste);
   margin-top: 10px;
+}
+
+/*estagio (listings)*/
+.imagem-card-estagio{
+  padding-right: 1rem;
+	padding-left: 1rem;
+	height: 20rem;
+	width: 30rem;
+	cursor: pointer;
+}
+
+/*login*/
+.container-login{
+  width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+	border: 3px solid black;
+	padding: 3rem;
+}
+#botao-submit-login{
+  background-color: var(--cor-contraste);
+	color: var(--cor-neutra);
+	font-size: 1.1rem;
+	margin-left: 1rem;
 }

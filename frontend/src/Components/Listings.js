@@ -159,13 +159,7 @@ function Listings() {
 								title={listing.title}
 							/>
 							<CardMedia
-								style={{
-									paddingRight: "1rem",
-									paddingLeft: "1rem",
-									height: "20rem",
-									width: "30rem",
-									cursor: "pointer",
-								}}
+								className="imagem-card-estagio"
 								component="img"
 								image={listing.picture1}
 								alt={listing.title}
@@ -176,44 +170,6 @@ function Listings() {
 									{listing.description.substring(0, 200)}...
 								</Typography>
 							</CardContent>
-
-							{listing.property_status === "Sale" ? (
-								<Typography
-									style={{
-										position: "absolute",
-										backgroundColor: "green",
-										zIndex: "1000",
-										color: "white",
-										top: "100px",
-										left: "20px",
-										padding: "5px",
-									}}
-								>
-									{listing.listing_type}: $
-									{listing.price
-										.toString()
-										.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-								</Typography>
-							) : (
-								<Typography
-									style={{
-										position: "absolute",
-										backgroundColor: "green",
-										zIndex: "1000",
-										color: "white",
-										top: "100px",
-										left: "20px",
-										padding: "5px",
-									}}
-								>
-									{listing.listing_type}: $
-									{listing.price
-										.toString()
-										.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-									/ {listing.rental_frequency}
-								</Typography>
-							)}
-
 							<CardActions disableSpacing>
 								<IconButton aria-label="add to favorites">
 									{listing.seller_agency_name}
@@ -231,10 +187,10 @@ function Listings() {
 							zoom={12}
 							scrollWheelZoom={true}
 						>
-							<TileLayer
-								attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-								url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-							/>
+							 <TileLayer
+              					  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              					  url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+              					/>
 							<TheMapComponent />
 
 							{allListings.map((listing) => {

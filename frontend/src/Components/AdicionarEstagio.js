@@ -1234,26 +1234,7 @@ function AddProperty() {
 					/>
 				</Grid>
 
-				{state.listingTypeValue === "Office" ? (
-					""
-				) : (
-					<Grid item xs={3} container style={{ marginTop: "1rem" }}>
-						<TextField
-							id="rooms"
-							label="Rooms"
-							type="number"
-							variant="standard"
-							fullWidth
-							value={state.roomsValue}
-							onChange={(e) =>
-								dispatch({
-									type: "catchRoomsChange",
-									roomsChosen: e.target.value,
-								})
-							}
-						/>
-					</Grid>
-				)}
+			
 
 				<Grid item container justifyContent="space-between">
 					<Grid item xs={2} style={{ marginTop: "1rem" }}>
@@ -1441,10 +1422,10 @@ function AddProperty() {
 						zoom={14}
 						scrollWheelZoom={true}
 					>
-						<TileLayer
-							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-							url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-						/>
+						 <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+              />
 
 						<TheMapComponent />
 						{BoroughDisplay()}
